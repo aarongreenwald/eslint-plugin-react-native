@@ -78,7 +78,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Inline style detected: { backgroundColor: \'#FFFFFF\', opacity: 0.5 }',
+        message: 'Inline style: { backgroundColor: \'#FFFFFF\', opacity: 0.5 }',
       }],
     },
     {
@@ -92,7 +92,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Inline style detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Inline style: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -106,7 +106,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Inline style detected: { height: 12 }',
+        message: 'Inline style: { height: 12 }',
       }],
     },
     {
@@ -120,7 +120,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Inline style detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Inline style: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -135,7 +135,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Inline style detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Inline style: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -159,7 +159,7 @@ const tests = {
         '}',
       ].join('\n'),
       errors: [{
-        message: 'Inline style detected: { backgroundColor: \'someBoolean ? \\\'#fff\\\' : \\\'#000\\\'\' }', //eslint-disable-line
+        message: 'Inline style: { backgroundColor: \'someBoolean ? \\\'#fff\\\' : \\\'#000\\\'\' }', //eslint-disable-line
       }],
     },
   ],

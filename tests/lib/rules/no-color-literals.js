@@ -80,7 +80,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Color literal detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Color literal: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -94,7 +94,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Color literal detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Color literal: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -111,7 +111,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Color literal detected: { fontColor: \'#000\' }',
+        message: 'Color literal: { fontColor: \'#000\' }',
       }],
     },
     {
@@ -125,7 +125,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Color literal detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Color literal: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -140,7 +140,7 @@ const tests = {
         '});',
       ].join('\n'),
       errors: [{
-        message: 'Color literal detected: { backgroundColor: \'#FFFFFF\' }',
+        message: 'Color literal: { backgroundColor: \'#FFFFFF\' }',
       }],
     },
     {
@@ -165,13 +165,13 @@ const tests = {
       ].join('\n'),
       errors: [
         {
-          message: 'Color literal detected: { color: \'red\' }',
+          message: 'Color literal: { color: \'red\' }',
         },
         {
-          message: 'Color literal detected: { color: \'blue\' }',
+          message: 'Color literal: { color: \'blue\' }',
         },
         {
-          message: 'Color literal detected: { backgroundColor: \'someBoolean ? \\\'#fff\\\' : \\\'#000\\\'\' }', //eslint-disable-line
+          message: 'Color literal: { backgroundColor: \'someBoolean ? \\\'#fff\\\' : \\\'#000\\\'\' }', //eslint-disable-line
         },
       ],
     },
