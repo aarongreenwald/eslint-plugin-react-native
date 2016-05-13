@@ -19,9 +19,7 @@ require('babel-eslint');
 
 const ruleTester = new RuleTester();
 
-
 const tests = {
-
   valid: [
     {
       code: [
@@ -36,11 +34,11 @@ const tests = {
         '    }',
         '});',
         'export default class MyComponent extends Component {',
-        '    static propTypes = {',
-        '        isDanger: PropTypes.bool',
-        '    };',
         '    render() {',
-        '        return <View style={[styles.style1, this.props.isDanger ? styles.style1 : styles.style2]} />;', //eslint-disable-line
+        '        const isDanger = true;',
+        '        return <View ',
+        '                   style={[styles.style1, isDanger ? styles.style1 : styles.style2]}',
+        '               />;',
         '    }',
         '}',
       ].join('\n'),
@@ -57,7 +55,8 @@ const tests = {
         '});',
         'export default class MyComponent extends Component {',
         '    render() {',
-        '        const trueColor = \'#fff\'; const falseColor = \'#000\' ',
+        '        const trueColor = \'#fff\';',
+        '        const falseColor = \'#000\' ',
         '        return <View ',
         '           style={[style1, ',
         '                   this.state.isDanger && {color: falseColor}, ',
@@ -149,8 +148,9 @@ const tests = {
         '    style1: {',
         '        color: \'red\',',
         '    },',
+        // this is illegal even though it's not used anywhere
         '    style2: {',
-        '        color: \'blue\',',
+        '        borderBottomColor: \'blue\',',
         '    }',
         '});',
         'export default class MyComponent extends Component {',
@@ -168,7 +168,7 @@ const tests = {
           message: 'Color literal: { color: \'red\' }',
         },
         {
-          message: 'Color literal: { color: \'blue\' }',
+          message: 'Color literal: { borderBottomColor: \'blue\' }',
         },
         {
           message: 'Color literal: { backgroundColor: \'someBoolean ? \\\'#fff\\\' : \\\'#000\\\'\' }', //eslint-disable-line
